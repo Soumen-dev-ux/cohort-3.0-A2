@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Insights & Blogs - ScaleX</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="header">
+    <div class="header-container">
+      <a href="#" class="logo-link">
+        <img src="images/logo.webp" alt="ScaleX" class="logo-img">
+      </a>
+      
+      <nav class="nav">
+        <ul class="nav-list">
+          <li><a href="#" class="nav-link">Home</a></li>
+          <li><a href="#" class="nav-link">About Us</a></li>
+          <li><a href="#" class="nav-link active">Blogs</a></li>
+          <li><a href="#" class="nav-link">Contact Us</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <a href="#" class="btn btn-secondary" id="get-started-btn">Get Started</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <div class="container">
+      
+      <section class="hero-section">
+        <h1 class="hero-title">Insights & Blogs</h1>
+        
+        <div class="filter-container">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="tech">Tech</button>
+          <button class="filter-btn" data-filter="saas">SaaS</button>
+          <button class="filter-btn" data-filter="marketing">Marketing</button>
+        </div>
+      </section>
+
+      <section class="blogs-grid">
+        
+        <article class="blog-card" data-category="tech">
+          <div class="card-image-wrapper">
+            <img src="images/cocktail.webp" alt="Cocktail on red background" class="card-image">
+          </div>
+          <div class="card-content">
+            <span class="card-tag">Tech</span>
+            <h3 class="card-title">The Ultimate Guide To SaaS Marketing</h3>
+            <p class="card-date">May 23, 2025</p>
+          </div>
+        </article>
+
+        <article class="blog-card" data-category="saas">
+          <div class="card-image-wrapper">
+            <img src="images/chair.webp" alt="Green chair on orange background" class="card-image">
+          </div>
+          <div class="card-content">
+            <span class="card-tag">SaaS</span>
+            <h3 class="card-title">5 Key Trends In SaaS Growth For 2025</h3>
+            <p class="card-date">May 23, 2025</p>
+          </div>
+        </article>
+
+        <article class="blog-card" data-category="marketing">
+          <div class="card-image-wrapper">
+            <img src="images/cat.webp" alt="Ginger cat looking up on red background" class="card-image">
+          </div>
+          <div class="card-content">
+            <span class="card-tag">Marketing</span>
+            <h3 class="card-title">How Data-Driven Strategies Are Important</h3>
+            <p class="card-date">May 23, 2025</p>
+          </div>
+        </article>
+
+      </section>
+    </div>
+  </main>
+
+</body>
+</html>

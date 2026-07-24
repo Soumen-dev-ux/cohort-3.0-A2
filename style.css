@@ -1,0 +1,327 @@
+:root {
+  --bg-primary: #050505;
+  --bg-card: #0c0c0c;
+  --bg-card-hover: #121212;
+  --border-card: #181818;
+  --border-card-hover: #2a2a2a;
+  --color-text-main: #ffffff;
+  --color-text-muted: #888888;
+  --color-text-dark: #555555;
+  
+  --color-orange-primary: #fd4c0a;
+  --color-orange-hover: #ff652f;
+  --color-orange-bg-translucent: rgba(253, 76, 10, 0.12);
+  --color-orange-text: #ff7847;
+
+  --font-family-sans: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-fast: all 0.2s ease;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--color-text-main);
+  font-family: var(--font-family-sans);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+.container {
+  width: 100%;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.header {
+  width: 100%;
+  border-bottom: 1px solid var(--border-card);
+  position: sticky;
+  top: 0;
+  background-color: rgba(5, 5, 5, 0.85);
+  backdrop-filter: blur(12px);
+  z-index: 1000;
+  transition: var(--transition-fast);
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+.logo-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.logo-img {
+  height: 32px;
+  width: auto;
+  display: block;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+}
+
+.nav-list {
+  display: flex;
+  list-style: none;
+  gap: 36px;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: var(--color-text-muted);
+  font-size: 15px;
+  font-weight: 500;
+  transition: var(--transition-fast);
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: var(--color-text-main);
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 11px 22px;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 500;
+  text-decoration: none;
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+
+.btn-secondary {
+  background-color: #121212;
+  color: var(--color-text-main);
+  border: 1px solid #222222;
+}
+
+.btn-secondary:hover {
+  background-color: #1a1a1a;
+  border-color: #333333;
+}
+
+.hero-section {
+  text-align: center;
+  padding-top: 80px;
+  padding-bottom: 40px;
+}
+
+.hero-title {
+  font-size: 105px;
+  font-weight: 700;
+  letter-spacing: -4px;
+  line-height: 0.95;
+  margin-bottom: 40px;
+  background: linear-gradient(180deg, #ffffff 60%, #a1a1a1 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.filter-container {
+  display: inline-flex;
+  justify-content: center;
+  gap: 10px;
+  background-color: rgba(255, 255, 255, 0.02);
+  padding: 6px;
+  border-radius: 40px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.filter-btn {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: var(--color-text-muted);
+  font-size: 15px;
+  font-weight: 500;
+  padding: 10px 22px;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+
+.filter-btn:hover {
+  color: var(--color-text-main);
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.filter-btn.active {
+  background-color: var(--color-orange-primary);
+  color: var(--color-text-main);
+  box-shadow: 0 4px 12px rgba(253, 76, 10, 0.3);
+}
+
+.blogs-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  padding-bottom: 100px;
+}
+
+.blog-card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-card);
+  border-radius: 28px;
+  padding: 18px;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+  display: flex;
+  flex-direction: column;
+}
+
+.card-image-wrapper {
+  width: 100%;
+  aspect-ratio: 16 / 11;
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+}
+
+.card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: var(--transition-smooth);
+}
+
+.blog-card:hover {
+  background-color: var(--bg-card-hover);
+  border-color: var(--border-card-hover);
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+}
+
+.blog-card:hover .card-image {
+  transform: scale(1.03);
+}
+
+.card-content {
+  padding: 24px 8px 8px 8px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.card-tag {
+  display: inline-block;
+  width: fit-content;
+  color: var(--color-orange-text);
+  background-color: var(--color-orange-bg-translucent);
+  font-size: 13px;
+  font-weight: 600;
+  padding: 6px 14px;
+  border-radius: 30px;
+  margin-bottom: 18px;
+  text-transform: capitalize;
+}
+
+.card-title {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.3;
+  color: var(--color-text-main);
+  margin-bottom: 18px;
+  flex-grow: 1;
+  letter-spacing: -0.3px;
+}
+
+.card-date {
+  font-size: 14px;
+  color: var(--color-text-dark);
+  font-weight: 500;
+}
+
+
+@media (max-width: 1024px) {
+  .header-container {
+    padding: 0 24px;
+  }
+  
+  .hero-title {
+    font-size: 80px;
+    letter-spacing: -3px;
+  }
+  
+  .blogs-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  
+  .card-title {
+    font-size: 21px;
+  }
+}
+
+@media (max-width: 768px) {
+  .header-container {
+    height: 70px;
+  }
+  
+  .nav {
+    display: none;
+  }
+  
+  .hero-title {
+    font-size: 60px;
+    letter-spacing: -2px;
+    margin-top: 40px;
+  }
+  
+  .blogs-grid {
+    grid-template-columns: 1fr;
+    max-width: 500px;
+    margin: 0 auto;
+    gap: 24px;
+    padding-bottom: 60px;
+  }
+  
+  .filter-container {
+    padding: 4px;
+  }
+  
+  .filter-btn {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 48px;
+    letter-spacing: -1.5px;
+  }
+  
+  .header-container {
+    padding: 0 16px;
+  }
+  
+  .btn {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+  
+  .card-title {
+    font-size: 20px;
+  }
+}
